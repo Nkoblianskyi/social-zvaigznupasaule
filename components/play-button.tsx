@@ -12,6 +12,7 @@ export function PlayButton() {
 
   const handleClick = () => {
     console.log("[v0] PlayButton clicked")
+    console.log("[v0] Setting showAgeModal to true")
     setShowAgeModal(true)
   }
 
@@ -20,6 +21,13 @@ export function PlayButton() {
     setShowAgeModal(false)
     router.push("/spele/kosmiskais-celojums")
   }
+
+  const handleModalClose = () => {
+    console.log("[v0] Modal closed")
+    setShowAgeModal(false)
+  }
+
+  console.log("[v0] PlayButton render, showAgeModal:", showAgeModal)
 
   return (
     <>
@@ -32,7 +40,7 @@ export function PlayButton() {
         Spēlēt Tagad
       </Button>
 
-      <AgeVerificationModal open={showAgeModal} onOpenChange={setShowAgeModal} onConfirm={handleAgeConfirmed} />
+      <AgeVerificationModal open={showAgeModal} onOpenChange={handleModalClose} onConfirm={handleAgeConfirmed} />
     </>
   )
 }

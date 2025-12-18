@@ -22,6 +22,7 @@ export function GamePreview() {
 
   const handlePlayClick = () => {
     console.log("[v0] GamePreview play button clicked")
+    console.log("[v0] Setting showAgeModal to true")
     setShowAgeModal(true)
   }
 
@@ -30,6 +31,13 @@ export function GamePreview() {
     setShowAgeModal(false)
     router.push("/spele/kosmiskais-celojums")
   }
+
+  const handleModalClose = () => {
+    console.log("[v0] GamePreview modal closed")
+    setShowAgeModal(false)
+  }
+
+  console.log("[v0] GamePreview render, showAgeModal:", showAgeModal)
 
   return (
     <>
@@ -110,7 +118,7 @@ export function GamePreview() {
         </div>
       </section>
 
-      <AgeVerificationModal open={showAgeModal} onOpenChange={setShowAgeModal} onConfirm={handleAgeConfirmed} />
+      <AgeVerificationModal open={showAgeModal} onOpenChange={handleModalClose} onConfirm={handleAgeConfirmed} />
     </>
   )
 }
