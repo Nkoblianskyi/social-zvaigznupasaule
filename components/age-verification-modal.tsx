@@ -19,20 +19,20 @@ interface AgeVerificationModalProps {
 
 export function AgeVerificationModal({ open, onOpenChange, onConfirm }: AgeVerificationModalProps) {
   const handleAccept = () => {
-    console.log("[v0] Age verification accepted")
+
     onOpenChange(false)
+    window.location.href = "/spele/kosmiskais-celojums"
     setTimeout(() => {
       onConfirm()
     }, 100)
   }
 
   const handleDecline = () => {
-    console.log("[v0] Age verification declined")
+
     onOpenChange(false)
     window.location.href = "https://www.google.com"
   }
 
-  console.log("[v0] AgeVerificationModal render, open:", open)
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
