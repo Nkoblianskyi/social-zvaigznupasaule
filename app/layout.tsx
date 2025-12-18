@@ -6,7 +6,6 @@ import { Footer } from "@/components/footer"
 import { Disclaimer } from "@/components/disclaimer"
 import { cn } from "@/lib/utils"
 import "./globals.css"
-import { AgeVerificationModal } from "@/components/age-verification-modal"
 
 const playfair = Playfair_Display({ subsets: ["latin"], variable: "--font-serif" })
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" })
@@ -14,7 +13,6 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-sans" })
 export const metadata: Metadata = {
   title: "Zvaigžņu Pasaule - Bezmaksas Sociālā Izklaides Platforma",
   description: "Bezmaksas sociālā izklaides platforma. Nav īsta nauda, nav balvas. Tikai izklaide 18+.",
-    generator: 'v0.app'
 }
 
 export default function RootLayout({
@@ -25,7 +23,6 @@ export default function RootLayout({
   return (
     <html lang="lv" suppressHydrationWarning>
       <body className={cn("min-h-screen bg-background font-sans antialiased", inter.variable, playfair.variable)}>
-        <AgeVerificationModal />
         <div className="relative flex min-h-screen flex-col">
           <Disclaimer type="top" />
           <Header />
