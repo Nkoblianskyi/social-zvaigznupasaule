@@ -20,7 +20,10 @@ interface AgeVerificationModalProps {
 export function AgeVerificationModal({ open, onOpenChange, onConfirm }: AgeVerificationModalProps) {
   const handleAccept = () => {
     console.log("[v0] Age verification accepted")
-    onConfirm()
+    onOpenChange(false)
+    setTimeout(() => {
+      onConfirm()
+    }, 100)
   }
 
   const handleDecline = () => {
