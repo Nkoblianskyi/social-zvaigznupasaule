@@ -21,11 +21,6 @@ export default function GamePage() {
   const [lastWin, setLastWin] = useState(0)
 
   useEffect(() => {
-    const hasVerified = localStorage.getItem("age-verified-zvaigznu-pasaule")
-    if (!hasVerified) {
-      router.push("/")
-      return
-    }
     const savedPoints = localStorage.getItem("bonus-points")
     if (savedPoints) {
       setBonusPoints(Number.parseInt(savedPoints))
