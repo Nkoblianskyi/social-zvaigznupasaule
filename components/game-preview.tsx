@@ -1,14 +1,12 @@
 "use client"
 
 import { useState } from "react"
-import { useRouter } from "next/navigation"
 import { Card, CardContent } from "@/components/ui/card"
 import { Check } from "lucide-react"
 import { AgeVerificationModal } from "./age-verification-modal"
 
 export function GamePreview() {
   const [showAgeModal, setShowAgeModal] = useState(false)
-  const router = useRouter()
 
   const features = [
     "Kosmosa simboli",
@@ -20,10 +18,13 @@ export function GamePreview() {
   ]
 
   const handleAgeConfirmed = () => {
-    setShowAgeModal(false)
-    setTimeout(() => {
-      router.push("/spele/kosmiskais-celojums")
-    }, 100)
+    console.log('Age confirmed in GamePreview')
+    window.location.href = "/spele/kosmiskais-celojums"
+  }
+
+  const handleStartGame = () => {
+    console.log('Start game button clicked')
+    setShowAgeModal(true)
   }
 
   return (
@@ -53,7 +54,7 @@ export function GamePreview() {
               </ul>
 
               <button
-                onClick={() => setShowAgeModal(true)}
+                onClick={handleStartGame}
                 className="mt-8 inline-flex h-12 items-center justify-center rounded-lg bg-amber-600 px-8 text-sm font-semibold text-white transition-colors hover:bg-amber-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-600 focus-visible:ring-offset-2"
                 type="button"
               >

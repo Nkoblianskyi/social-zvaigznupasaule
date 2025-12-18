@@ -18,7 +18,10 @@ interface AgeVerificationModalProps {
 }
 
 export function AgeVerificationModal({ open, onOpenChange, onConfirm }: AgeVerificationModalProps) {
+  console.log('Modal rendered, open:', open)
+  
   const handleAccept = () => {
+    console.log('Accept clicked')
     onOpenChange(false)
     setTimeout(() => {
       onConfirm()
@@ -26,7 +29,7 @@ export function AgeVerificationModal({ open, onOpenChange, onConfirm }: AgeVerif
   }
 
   const handleDecline = () => {
-
+    console.log('Decline clicked')
     onOpenChange(false)
     window.location.href = "https://www.google.com"
   }
