@@ -21,7 +21,6 @@ export function AgeVerificationModal({ open, onOpenChange, onConfirm }: AgeVerif
   const handleAccept = () => {
 
     onOpenChange(false)
-    window.location.href = "/spele/kosmiskais-celojums"
     setTimeout(() => {
       onConfirm()
     }, 100)
